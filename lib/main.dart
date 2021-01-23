@@ -17,7 +17,10 @@ class _MyAppState extends State<MyApp> {
   String userName;
   dynamic authenticator;
   authenticate() async {
+     // keyclock url : key-clock-url : example : http://localhost:8080
+    // my realm : name of your realm
     var uri = Uri.parse('http://key-clock-url/auth/realms/myrealm');
+    // your client id 
     var clientId = 'client-id';
     var scopes = List<String>.of(['openid', 'profile']);
     var port = 8080;
@@ -57,6 +60,7 @@ class _MyAppState extends State<MyApp> {
             floatingActionButton: FloatingActionButton(
               child: Text("open"),
               onPressed: () async {
+                 // here i call the authenticate mthode to run the process.. i had a problem with the keyclock itself .. wish it works for you
                 authenticate();
               },
             ),
